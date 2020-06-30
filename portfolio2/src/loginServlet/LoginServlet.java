@@ -10,8 +10,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import dbAccess.DBAccess;
 import dbAccess.SelectForLogin;
 
@@ -29,15 +27,15 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		
-		// ƒZƒbƒVƒ‡ƒ“‚Ìæ“¾(‚È‚¯‚ê‚Înull‚ª•Ô‚Á‚Ä‚­‚é)
-		// ‚±‚±‚Éˆ—‚ğ‹L“ü‚µ‚Ä‚­‚¾‚³‚¢
-		HttpSession session = request.getSession(false); //session‚ªÅ‰‚Í‚È‚¢‚©‚çnull‚ª“ü‚é ƒƒOƒCƒ“‚ğ‚µ‚É‚­‚é‚©‚çfalse‚ª“ü‚éBlogout‚µ‚½‚Æ‚«‚É‚Ísession‚ªc‚Á‚Ä‚¢‚é
-		// ƒZƒbƒVƒ‡ƒ“‚Ì”jŠü
-		// ‚±‚±‚Éˆ—‚ğ‹L“ü‚µ‚Ä‚­‚¾‚³‚¢
-		if(session != null) session.invalidate();//ƒƒOƒAƒEƒg‚µ‚½‚Ìˆ—@ƒƒOƒAƒEƒg‚µ‚Ä”jŠü‚µ‚½‚¢‚Æ‚«‚ÉÀs‚³‚ê‚é
-		// ƒƒOƒCƒ“¸”sAƒƒOƒAƒEƒgA•s³‘€ìˆÈŠO‚Ìê‡
-		if(request.getAttribute("message") == null) request.setAttribute("message", "Please enter your name or Pass ");//requestƒXƒR[ƒv‚©‚ç’l‚ğæ‚èo‚µ‚Ä‚¢‚é
-		//80s–Ú‚©‚ç”ò‚ñ‚Å‚«‚½‚Æ‚«‚Ímessage‚ªnull‚Å‚È‚¢‚©‚çif•¶‚Í”ò‚Î‚·		
+		// ï¿½Zï¿½bï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ìæ“¾(ï¿½È‚ï¿½ï¿½ï¿½ï¿½nullï¿½ï¿½ï¿½Ô‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½)
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//HttpSession session = request.getSession(false); //sessionï¿½ï¿½ï¿½Åï¿½ï¿½Í‚È‚ï¿½ï¿½ï¿½ï¿½ï¿½nullï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É‚ï¿½ï¿½é‚©ï¿½ï¿½falseï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Blogoutï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½É‚ï¿½sessionï¿½ï¿½ï¿½cï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
+		// ï¿½Zï¿½bï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ì”jï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//if(session != null) session.invalidate();//ï¿½ï¿½ï¿½Oï¿½Aï¿½Eï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½@ï¿½ï¿½ï¿½Oï¿½Aï¿½Eï¿½gï¿½ï¿½ï¿½Ä”jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Éï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Oï¿½Aï¿½Eï¿½gï¿½ï¿½ï¿½Aï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ìï¿½ÈŠOï¿½Ìê‡
+		if(request.getAttribute("message") == null) request.setAttribute("message", "Please enter your name or Pass ");//requestï¿½Xï¿½Rï¿½[ï¿½vï¿½ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
+		//80ï¿½sï¿½Ú‚ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½messageï¿½ï¿½nullï¿½Å‚È‚ï¿½ï¿½ï¿½ï¿½ï¿½ifï¿½ï¿½ï¿½Í”ï¿½Î‚ï¿½		
 		response.setContentType("text/html; charset=UTF-8");
 		ServletContext context = getServletContext();
 		RequestDispatcher dis = context.getRequestDispatcher("/Login.jsp");
@@ -61,7 +59,7 @@ public class LoginServlet extends HttpServlet {
 		boolean flag = (boolean) request.getAttribute("flag");
 		
 		if(flag) {
-			response.sendRedirect("http://localhost:8080/portfolio2/CalendarAccess");
+			response.sendRedirect("http://localhost:8080/portfolio2/TopSelectServlet");
 		}else {
 			doGet(request, response);
 		}

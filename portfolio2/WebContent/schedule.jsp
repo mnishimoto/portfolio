@@ -5,13 +5,15 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="scheduleStyle.css">
 <title>Insert title here</title>
 </head>
 <body>
+	<div>
 	<form action="Schedule" method="post">
 	<p>スケジュール名</p>
-	<input type="text" name="schedule">
-	<div>
+	<input type="text" name="schedule"placeholder="※英数字のみで入力してください※">
+	
 	<p>予定時刻</p>
 	<select name="start">
 		<option value="">-</option>
@@ -19,15 +21,15 @@
     	<option><c:out value="${i}" /></option>
   		</c:forEach>
 	</select>　時
-	<p>～</p>
+	<a>～</a>
 	<select name="end">
 		<option value="">-</option>
   		<c:forEach begin="1" end="24" var="i">
     	<option><c:out value="${i}" /></option>
   		</c:forEach>
-	</select>　時
-	</div>	
-	<input type="submit" id="ok" name="ok" value="送信"/>
+	</select>　時	
+	<button>送信</button>
 	</form>
+	</div>
 </body>
 </html>

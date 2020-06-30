@@ -1,6 +1,7 @@
 package top;
 
 import java.io.IOException;
+import java.util.Calendar;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -31,9 +32,6 @@ public class TopServlet extends HttpServlet {
 			case "select":
 				next = "Selectdb";
 				break;
-			case "CalendarAccess":
-				next = "CalendarAccess";
-				break;
 			default:
 				next = "Selectdb.jsp";
 				break;
@@ -41,11 +39,15 @@ public class TopServlet extends HttpServlet {
 		}else {
 			next = "Selectdb.jsp";
 		}
+		Calendar cal = Calendar.getInstance();
+		request.setAttribute("year", cal.get(Calendar.YEAR));
+		request.setAttribute("month", cal.get(Calendar.MONTH)+1);
+		request.setAttribute("day", cal.get(Calendar.DATE));
 		
 		ServletContext context = getServletContext();
 		RequestDispatcher dis = context.getRequestDispatcher("/" + next);
 		dis.forward(request, response);
-
+		
 	}
 
 	/**

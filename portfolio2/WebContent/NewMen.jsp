@@ -4,11 +4,12 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="NewMenStyle.css">
 <title>New Member</title>
 </head>
 <body>
 	<div class=all>
-		<label>NEW Member</label>
+		<label>NEW MEMBER</label>
 		<form action="NewMen" method="post">
 			<p>USER NAME</p>
 			<input type="text" name="name">

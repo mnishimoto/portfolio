@@ -1,0 +1,47 @@
+body{
+	margin: 0 auto;
+	background-image: url("back-2.jpg");
+	background-size:cover;
+	font-size: 20px;
+    font-family: "YuGothic","Yu Gothic","Meiryo","Century Gothic","sans-serif";
+}    
+
+div{
+	text-align: center;
+	background: rgba(255,255,255,0.5);
+	margin-left:350px;
+	margin-right:350px;
+	padding-bottom:440px;
+	padding-top:10px;
+}
+
+p{
+	display: block;
+	padding:20px;
+	font-size:25px;
+	font-weight:520;
+}
+
+button{
+	display: block;
+	word-wrap: break-word;
+	padding:6px 10px;
+	background:white;
+	color:black;
+	border: solid 2px #333c5e;
+	border-radius: 4px;
+	margin-left:45%;
+	margin-top:50px;
+}
+
+input{
+	padding: 0.3em 1em;
+	text-decoration: none;
+	border-radius: 3px;
+}
+
+
+button:hover{
+	background:black;
+	color:white;
+}

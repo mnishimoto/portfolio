@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="LoginStyle.css">
 <title>LOGIN</title>
 </head>
 <body>
-	<div class=all>
+	<div>
 		<label>LOGIN</label>
 		<form action="LoginServlet" method="post">
 			<p>USER NAME</p>

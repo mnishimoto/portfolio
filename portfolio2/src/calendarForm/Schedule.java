@@ -3,6 +3,8 @@ package calendarForm;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,7 +41,9 @@ public class Schedule extends HttpServlet {
 			// TODO �����������ꂽ catch �u���b�N
 			e.printStackTrace();
 		}
-		
+		ServletContext context = getServletContext();
+		RequestDispatcher dis = context.getRequestDispatcher("/TopSelect.jsp");
+		dis.forward(request, response);
 	}
 
 }

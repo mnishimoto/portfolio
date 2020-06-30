@@ -4,13 +4,14 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="formStyle.css">
 <title>Insert title here</title>
 </head>
 <body>
-
-<b>カレンダーの変更</b>
+<div>
+<label>カレンダーの変更</label>
 <br/>
-<div style="text-align:center;">
+
 <form action="CalendarForm" method="get">
 <select id="year" name="year">
 <%

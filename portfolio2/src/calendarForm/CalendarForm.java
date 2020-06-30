@@ -35,7 +35,7 @@ public class CalendarForm extends HttpServlet {
 		// TODO Auto-generated method stub
 		prepData(request);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("calendarForm.jsp");
-		// ƒtƒHƒ[ƒh‚É‚æ‚éƒy[ƒW‘JˆÚ
+		// ï¿½tï¿½Hï¿½ï¿½ï¿½[ï¿½hï¿½É‚ï¿½ï¿½yï¿½[ï¿½Wï¿½Jï¿½ï¿½
 		dispatcher.forward(request, response);
 	}
 
@@ -48,38 +48,38 @@ public class CalendarForm extends HttpServlet {
 		// TODO Auto-generated method stub
 	}
 
-	// ‘—M—p‚Ìƒf[ƒ^‚Ìì¬
+	// ï¿½ï¿½ï¿½Mï¿½pï¿½Ìƒfï¿½[ï¿½^ï¿½Ìì¬
 	private void prepData(HttpServletRequest request) {
-		// •Ï”‰Šú‰»
+		// ï¿½Ïï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		int startday;
 		int lastday;
-		// ƒJƒŒƒ“ƒ_[‚Ìæ“¾
+		// ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½[ï¿½Ìæ“¾
 		Calendar cal = Calendar.getInstance();
 
 		HttpSession session = request.getSession(true);
-		// ”N‚ªİ’è‚³‚ê‚Ä‚¢‚ê‚ÎA‚»‚Ì’l‚ğæ“¾B‚»‚¤‚Å‚È‚¯‚ê‚ÎA¡”N‚Ì”N†‚ğ“ü‚ê‚é
+		// ï¿½Nï¿½ï¿½ï¿½İ’è‚³ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ÎAï¿½ï¿½ï¿½Ì’lï¿½ï¿½ï¿½æ“¾ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½Å‚È‚ï¿½ï¿½ï¿½ÎAï¿½ï¿½ï¿½Nï¿½Ì”Nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (request.getParameter("year") == null) {
-			session.setAttribute("year", cal.get(Calendar.YEAR)); // Œ»İ‚Ì”N
+			session.setAttribute("year", cal.get(Calendar.YEAR)); // ï¿½ï¿½ï¿½İ‚Ì”N
 
 		} else {
-			session.setAttribute("year", request.getParameter("year")); // Œ»İ‚Ì”N
+			session.setAttribute("year", request.getParameter("year")); // ï¿½ï¿½ï¿½İ‚Ì”N
 		}
 		if (request.getParameter("month") == null) {
-			session.setAttribute("month", cal.get(Calendar.MONTH) + 1); // Œ»İ‚ÌŒ
+			session.setAttribute("month", cal.get(Calendar.MONTH) + 1); // ï¿½ï¿½ï¿½İ‚ÌŒï¿½
 		} else {
-			session.setAttribute("month", request.getParameter("month")); // —^‚¦‚ç‚ç‚ê‚½Œ
+			session.setAttribute("month", request.getParameter("month")); // ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½
 		}
 
 		int year = Integer.parseInt(session.getAttribute("year").toString());
 		int month = Integer.parseInt(session.getAttribute("month").toString());
-		// Œ‰‚ß‚Ì—j“ú(“ú-> 1)
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ß‚Ì—jï¿½ï¿½(ï¿½ï¿½-> 1)
 		cal.set(year, month - 1, 1);
 		startday = cal.get(Calendar.DAY_OF_WEEK);
-		// Œ––‚Ì“ú•t
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Ì“ï¿½ï¿½t
 		cal.add(Calendar.MONTH, 1);
 		cal.add(Calendar.DATE, -1);
 		lastday = cal.get(Calendar.DATE);
-		// ƒJƒŒƒ“ƒ_[‚Ìƒf[ƒ^‚ğì¬‚·‚é
+		// ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½[ï¿½Ìƒfï¿½[ï¿½^ï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½ï¿½
 		int date = 1;
 		int maxday = 6 * 7;
 		StringBuilder sb = new StringBuilder();
@@ -106,13 +106,13 @@ public class CalendarForm extends HttpServlet {
 				if (date < lastday) {
 					sb.append("<tr>");
 				} else {
-					// ÅŒã‚¾‚Á‚½‚çAƒ‹[ƒv‚©‚ç”²‚¯‚é
+					// ï¿½ÅŒã‚¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½[ï¿½vï¿½ï¿½ï¿½ç”²ï¿½ï¿½ï¿½ï¿½
 					break;
 				}
 			}
 		}
 		sb.append("</table>");
-		// ƒpƒ‰ƒ[ƒ^‚ğİ’è
+		// ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½ï¿½İ’ï¿½
 		session.setAttribute("calender", sb);
 		return;
 	}

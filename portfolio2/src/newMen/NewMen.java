@@ -58,7 +58,7 @@ request.setCharacterEncoding("utf-8");
 				doGet(request, response);
 			}
 		} catch (SQLException e) {
-			request.setAttribute("message", "‚»‚ÌƒpƒXƒ[ƒh‚Íg—p‚³‚ê‚Ä‚¢‚Ü‚·");
+			request.setAttribute("message", "ãã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¯ä½¿ç”¨ã•ã‚Œã¦ã„ã¾ã™");
 			e.printStackTrace();
 			doGet(request, response);	}
 

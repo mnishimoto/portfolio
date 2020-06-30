@@ -1,0 +1,40 @@
+body{
+	margin: 0 auto;
+	background-image: url("back-2.jpg");
+	background-size:cover;
+	font-size: 20px;
+    font-family: "YuGothic","Yu Gothic","Meiryo","Century Gothic","sans-serif";
+}    
+
+div{
+	text-align: center;
+	background: rgba(255,255,255,0.5);
+	margin-left:450px;
+	margin-right:450px;
+	padding-bottom:320px;
+}
+
+input{
+	padding:10px;
+	margin:40px;
+	margin-top:40px;
+	margin-bottom:30px;
+	background:white;
+	color:black;
+	border: solid 2px #333c5e;
+	border-radius: 4px;
+}
+label{
+	display: block;
+	font-size:30px;
+	padding:20px;
+}
+.login:hover{
+	background:black;
+	color:white;
+}
+.regist:hover{
+	background:black;
+	color:white;
+}
+

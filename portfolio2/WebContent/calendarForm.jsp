@@ -8,11 +8,13 @@
 <link rel="stylesheet" href="calendarStyle.css">
 </head>
 <body>
-<b><%= session.getAttribute("year") %>年<%=session.getAttribute("month") %>月のカレンダー</b>
 <div>
+<label style="display:block;padding:40px;font-size:30px;font-weight:530;"><%= session.getAttribute("year") %>年<%=session.getAttribute("month") %>月のカレンダー</label>
 <br/>
 <br/>
+
 <%= session.getAttribute("calender") %>
+
 <br/>
 </div>
 </body>

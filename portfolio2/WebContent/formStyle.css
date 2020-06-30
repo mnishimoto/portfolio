@@ -1,0 +1,37 @@
+body{
+	margin: 0 auto;
+	background-image: url("back-2.jpg");
+	background-size:cover;
+	font-size: 20px;
+    font-family: "YuGothic","Yu Gothic","Meiryo","Century Gothic","sans-serif";
+}    
+
+div{
+	text-align: center;
+	background: rgba(255,255,255,0.5);
+	margin-left:350px;
+	margin-right:350px;
+	padding-bottom:500px;
+}
+
+label{
+	display: block;
+	padding:40px;
+	font-size:30px;
+	font-weight:520;
+}
+
+input{
+	padding:6px 10px;
+	background:white;
+	color:black;
+	border: solid 2px #333c5e;
+	border-radius: 4px;
+}
+
+
+
+input:hover{
+	background:black;
+	color:white;
+}
